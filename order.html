@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تأكيد الطلب - Game Store DZ</title>
+
+  <style>
+    body {
+      font-family: Tahoma;
+      background: #020617;
+      color: white;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 420px;
+      margin: auto;
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      background: #22c55e;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .order-id {
+      background: #111827;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .warn {
+      font-size: 13px;
+      color: #fbbf24;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>🧾 تأكيد الطلب</h2>
+
+  <div class="order-id">
+    رقم الطلب: <strong id="orderNumber"></strong>
+  </div>
+
+  <input type="text" placeholder="اسمك الكامل" required>
+
+  <input type="text" placeholder="Game ID / Username" required>
+
+  <select>
+    <option>Free Fire Account</option>
+    <option>Instagram Account</option>
+    <option>TikTok Account</option>
+    <option>PUBG Account</option>
+    <option>FIFA Account</option>
+  </select>
+
+  <select>
+    <option>بريدي موب</option>
+    <option>Binance USDT</option>
+    <option>RedotPay</option>
+  </select>
+
+  <button onclick="confirm()">تأكيد الطلب</button>
+
+  <div class="warn">
+    ⚠️ أي معلومات خاطئة أو محاولة احتيال تؤدي إلى إلغاء الطلب بدون استرجاع.
+  </div>
+</div>
+
+<script>
+  // توليد رقم طلب عشوائي
+  const orderId = "GS-" + Math.floor(Math.random() * 90000 + 10000);
+  document.getElementById("orderNumber").innerText = orderId;
+
+  function confirm() {
+    alert(
+      "✅ تم تسجيل طلبك بنجاح\n" +
+      "رقم الطلب: " + orderId + "\n" +
+      "طلبك قيد المراجعة، سيتم التسليم بعد التأكد من الدفع."
+    );
+  }
+</script>
+
+</body>
+</html>
